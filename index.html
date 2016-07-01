@@ -340,7 +340,7 @@
   });
 
   $("#btnSubmit2").on("click", function(){
-var queryTring = $("#contactform2").serialize();
+var queryString = $("#contactform2").serialize();
     $.ajax({
       url: "http://www.fakedomain.com/formatpost?"+queryString,
       success: function(resp, txt, xhr){
@@ -355,8 +355,10 @@ var queryTring = $("#contactform2").serialize();
         }
       },
       error: function(error){
-        
-      }
+        alert(error);
+
+      },
+      method: `POST`
     })
   });
     </script>
